@@ -28,3 +28,5 @@ print(sade*sade*lukupi)
 
 # print(luku1 + luku1)
 # print((luku2 * 4))
+
+print (type(nimi))
