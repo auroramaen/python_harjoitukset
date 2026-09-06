@@ -20,3 +20,9 @@ Tein tehtävät 1 ja 2.
 
 ## Moduuli 5
 
+4.9. Tein moduuli 5 
+
+## Moduuli 6
+
+4.9. aloitin moduuli 6
+

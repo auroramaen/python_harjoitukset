@@ -1,1 +1,0 @@
-# mod05 tehtävä 6. ei ole pakollista tehdä
