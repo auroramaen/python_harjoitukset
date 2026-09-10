@@ -26,3 +26,7 @@ Tein tehtävät 1 ja 2.
 
 4.9. aloitin moduuli 6
 
+## Moduuli 7
+
+10.9. Moduuli 7 tehty
+
