@@ -30,3 +30,6 @@ Tein tehtävät 1 ja 2.
 
 10.9. Moduuli 7 tehty
 
+## Moduuli 8
+
+11.9. Moduuli 8 aloitettu
