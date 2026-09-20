@@ -24,12 +24,18 @@ Tein tehtävät 1 ja 2.
 
 ## Moduuli 6
 
-4.9. aloitin moduuli 6
+4.9. Moduuli 6 aloitettu
 
 ## Moduuli 7
 
-10.9. Moduuli 7 tehty
+10.9. Moduuli 7 valmis
 
 ## Moduuli 8
 
 11.9. Moduuli 8 aloitettu
+20.9. Moduuli 8 valmis
+
+## Moduuli 9
+
+20.9. Moduuli 9 ja 10 aloitettu
+20.9. Moduuli 6 valmis

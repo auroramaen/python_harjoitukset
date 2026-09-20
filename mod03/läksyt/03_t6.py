@@ -9,5 +9,5 @@ print(f'Kolmenumeroinen koodi: {koodi1}{koodi2}{koodi3}')
 # # for _ in (for (arvo) in)
 # # str() muutetaan arvot tekstiksi
 # # ''.join() yhdistää merkit
-koodi4 = ''.join(str(random.randint(1, 6)) for _ in range(4))
+koodi4 = ''.join(str(random.randint(1, 6)) for item in range(4))
 print(f'Nelinumeroinen koodi: {koodi4}')
