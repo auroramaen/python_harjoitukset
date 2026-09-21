@@ -4,10 +4,14 @@
 #Toisaalta esimerkiksi luku 21 ei ole alkuluku, koska se voidaan jakaa tasan myös luvulla 3 tai luvulla 7.
 
 luku = int(input('Anna jokin kokonaisluku: '))
+tarkistus = True
 
 for item in range(2, luku):
     if luku % item == 0:
-        print(f'{luku} on alkuluku.')
+        tarkistus = False
         break
-    else:
-        print(f'{luku} ei ole alkuluku.')
+
+if tarkistus:
+    print(f'{luku} on alkuluku.')
+else:
+    print(f'{luku} ei ole alkuluku.')
