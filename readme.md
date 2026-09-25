@@ -39,3 +39,7 @@ Tein tehtävät 1 ja 2.
 
 20.9. Moduuli 9 ja 10 aloitettu
 20.9. Moduuli 6 valmis
+
+## Moduuli 10 ja 11
+
+25.9. Moduuli 10 tehty, moduuli 11 kesken

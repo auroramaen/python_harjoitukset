@@ -1,7 +1,7 @@
 import random
 # Valikko ja komennot
 k = 'Kalasta'
-l = 'Liiku veneellä'
+l = 'Liiku'
 i = 'Inventaario'
 e = 'Lopeta'
 
@@ -16,11 +16,11 @@ def fish():
     if kalaonni in (1, 2, 3):
         kalasaalis = random.choice(kalat)
         print(f'Sinulla on kalaonnea, saaliisi on {kalasaalis} 🐟!')
-        paatos = input('Haluatko kerätä vai vapauttaa kalan? KERÄÄ/VAPAUTA: ')
-        if paatos == 'KERÄÄ':
+        paatos = input('Haluatko kerätä vai vapauttaa kalan? K = KERÄÄ/V = VAPAUTA: ')
+        if paatos == 'K':
             print('Kala lisättiin inventaarioosi.')
             inventaario.append(kalasaalis)
-        elif paatos == 'VAPAUTA':
+        elif paatos == 'V':
             print('Vapautat kalan takaisin veteen.')
         return
     else:
@@ -34,10 +34,10 @@ def move():
         if len(inventaario) <= 2:
             print('Tarkastaja tarkistaa inventaariosi mutta vapauttaa sinut ilman lupatarkastusta.')
         elif len(inventaario) > 2:
-            print('Tarkastaja tarkistaa inventaariosi ja huomaa, ettet ole maksanut vaadittua kalastonhoitomaksua.\nTarkastaja takavarikoi inventaariosi.')
+            print('Tarkastaja tarkistaa inventaariosi ja huomaa ettet ole maksanut vaadittua kalastonhoitomaksua.\nTarkastaja takavarikoi inventaariosi.')
             inventaario.clear()
     else:
-        print('Vaihdat kalastuspaikkaa.\nOnneksi lupatarkastajaa ei näy missään, sillä et muista, oliko sinulla luvat kunnossa.')
+        print('Vaihdat kalastuspaikkaa.\nOnneksi tarkastajaa ei näy, sillä et muista, oliko sinulla kalastusluvat kunnossa.')
         return
 
 def inventory():
