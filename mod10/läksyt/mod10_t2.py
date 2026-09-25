@@ -10,7 +10,7 @@ class Hissi:
         self.alinkerros = alinkerros
         self.ylinkerros = ylinkerros
         #uusi hissi aloittaa alimmasta kerroksesta
-        self.kerros = self.alin
+        self.kerros = self.alinkerros
 
     def kerros_ylös(self):
         self.kerros += 1
@@ -29,11 +29,18 @@ class Talo:
         self.alinkerros = alinkerros
         self.ylinkerros = ylinkerros
         self.hissitlkm = hissitlkm
-        hissit = []
+
+        self.hissit = []
 
         for item in range(hissitlkm):
-            uusi_hissi = Hissi()
-            hissit.append(uusi_hissi)
+            uusi_hissi = Hissi(alinkerros, ylinkerros)
+            self.hissit.append(uusi_hissi)
 
-    def __init__(self, hissinumero, kohdekerros):
-        
+    def aja_hissia(self, hissinumero, kohdekerros):
+        hissin_indeksi = hissinumero
+        self.hissit[hissin_indeksi].siirry_kerrokseen(kohdekerros)
+        print(f'Hissi numero {hissin_indeksi} on kerroksessa {kohdekerros}')
+
+talo1 = Talo(1, 12, 6)
+talo1.aja_hissia(5, 11)
+

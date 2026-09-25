@@ -19,9 +19,10 @@ class Playlist:
 
 playlist = Playlist()
 playlist.lisaa(s1)
-print(playlist.munlista)
-for item in playlist:
-    print(item.singer)
+playlist.lisaa(s2)
+playlist.lisaa(s3)
+for item in playlist.munlista:
+    print(f'{item.singer} - {item.songname}')
 
 #l1 = [s1, s2, s3]
 #for item in l1:
