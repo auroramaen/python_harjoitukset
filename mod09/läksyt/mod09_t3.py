@@ -24,7 +24,7 @@ class Auto:
 
 auto = Auto("ABC-123", 142)
 auto.kiihdytä(60)
-auto.kulje(1.5)
+auto.kulje(3)
 print(f'Auto on kulkenut {int(auto.matka)} km matkan.')
 #auto.kiihdytä(30)
 #auto.kiihdytä(70)

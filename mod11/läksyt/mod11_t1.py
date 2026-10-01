@@ -34,3 +34,5 @@ j2 = Kirja('Hytti nro 6', 'Rosa Liksom', '200')
 j1.tulosta_tiedot()
 j2.tulosta_tiedot()
 
+#Julkaisu().__init__(self, nimi)
+

@@ -28,10 +28,10 @@ auto.kiihdytä(70)
 
 auto.kiihdytä(50)
 
-#print(auto.nopeus)
+print(auto.nopeus)
 
 auto.kiihdytä(-200)
 
 #print(auto.nopeus)
-
-print(f'Auton rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus}km/h, tämänhetkinen nopeus {auto.nopeus}km/h ja kuljettu matka {auto.matka} km.')
+print(auto.nopeus)
+#print(f'Auton rekisteritunnus on {auto.rekisteritunnus}, huippunopeus {auto.huippunopeus}km/h, tämänhetkinen nopeus {auto.nopeus}km/h ja kuljettu matka {auto.matka} km.')

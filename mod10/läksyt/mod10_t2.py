@@ -32,9 +32,8 @@ class Talo:
 
         self.hissit = []
 
-        for item in range(hissitlkm):
-            uusi_hissi = Hissi(alinkerros, ylinkerros)
-            self.hissit.append(uusi_hissi)
+        for _ in range(hissitlkm):
+            self.hissit.append(Hissi(alinkerros, ylinkerros))
 
     def aja_hissia(self, hissinumero, kohdekerros):
         hissin_indeksi = hissinumero
