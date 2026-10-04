@@ -1,73 +1,51 @@
 import random
+from kalat import Kala
+from paikat import Kalapaikka
+from pelaaja import Pelaaja
+
 # Valikko ja komennot
-k = 'Kalasta'
-l = 'Liiku'
-i = 'Inventaario'
-e = 'Lopeta'
+k = 'KALASTA'
+l = 'LIIKU'
+i = 'INVENTAARIO'
+e = 'LOPETA'
 
-# Listat
-kalat = ['kuha', 'taimen', 'saapas', 'ahven', 'särki', 'hauki']
-inventaario = []
+kp1 = Kalapaikka('Pieni järvi', Kala.create())
+kp2 = Kalapaikka('Iso järvi', Kala.create())
+kp3 = Kalapaikka('Joki', Kala.create())
+kp4 = Kalapaikka('Koski', Kala.create())
+paikat = [kp1, kp2, kp3, kp4]
 
-#Funktiot
-def fish():
-    print('Heilautat vapaa ja viehe lentää kaaressa veteen. Onko sinulla kalaonnea?')
-    kalaonni = random.randint(1, 4)
-    if kalaonni in (1, 2, 3):
-        kalasaalis = random.choice(kalat)
-        print(f'Sinulla on kalaonnea, saaliisi on {kalasaalis} 🐟!')
-        paatos = input('Haluatko kerätä vai vapauttaa kalan? K = KERÄÄ/V = VAPAUTA: ')
-        if paatos == 'K':
-            print('Kala lisättiin inventaarioosi.')
-            inventaario.append(kalasaalis)
-        elif paatos == 'V':
-            print('Vapautat kalan takaisin veteen.')
-        return
-    else:
-        print('Ei kalaonnea tällä kertaa. 😞')
-        return
-
-def move():
-    tarkastus = random.randint(1,3)
-    if tarkastus == 1:
-        print('Törmäät lupatarkastajaan.')
-        if len(inventaario) <= 2:
-            print('Tarkastaja tarkistaa inventaariosi mutta vapauttaa sinut ilman lupatarkastusta.')
-        elif len(inventaario) > 2:
-            print('Tarkastaja tarkistaa inventaariosi ja huomaa ettet ole maksanut vaadittua kalastonhoitomaksua.\nTarkastaja takavarikoi inventaariosi.')
-            inventaario.clear()
-    else:
-        print('Vaihdat kalastuspaikkaa.\nOnneksi tarkastajaa ei näy, sillä et muista, oliko sinulla kalastusluvat kunnossa.')
-        return
-
-def inventory():
-    print(f'Inventaariosi on {inventaario}')
-    return
-
-# Pääohjelma
+# Aloituskysymykset
 nimi = input('Syötä nimesi: ')
 ikä = int(input('Syötä ikäsi: '))
+aloituspaikka = random.choice(paikat)
 
+with open("intro.txt", "r", encoding="utf-8") as tiedosto:
+    intro = tiedosto.read()
+    print(intro)
+
+# Pääohjelma
 if ikä < 12:
     print('Olet alaikäinen. Peli päättyy.')
 else:
-    print(f'\nTervetuloa, {nimi}!\n')
-    print('Olet kalastamassa veneellä keskellä järveä.\nSinun pitää kalastaa illalliseksi joko 4 ahventa tai 3 taimenta.\nOlikohan sinulla kalastusluvat kunnossa?\n')
+# Uuden pelaajan luonti
+    pelaaja = Pelaaja(nimi, ikä, aloituspaikka)
+    print(f'\nTervetuloa, {nimi}!')
     while True:
         print('VALIKKO')
         print(k, l, i, e)
-        komento = input('Valitse komento: ')
+        komento = input('Valitse komento: ').upper()
         if komento == k:
-            fish()
-            ahvenet = inventaario.count('ahven')
-            taimenet = inventaario.count('taimen')
+            pelaaja.fish()
+            ahvenet = pelaaja.inventaario.count('ahven')
+            taimenet = pelaaja.inventaario.count('taimen')
             if ahvenet >= 4 or taimenet >= 3:
-                print('Voit pelin! Kalastit tarpeeksi kalaa illallista varten!')
+                print('Voitit pelin! Sait tarvittavan määrän saalista.')
                 break
         elif komento == l:
-            move()
+            pelaaja.move(random.choice(paikat))
         elif komento == i:
-            inventory()
+            pelaaja.inventory()
         elif komento == e:
             print('Peli päättyi.')
             break
