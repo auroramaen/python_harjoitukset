@@ -20,8 +20,17 @@ Yksi funktio kysyy käyttäjältä lisätäänkö kalastettu kala inventaariolis
 Inventaariofunktio tulostaa listan sisällön käyttäjälle.
 Liikkumistoiminto triggeröi lupatarkastajan kohtaamisen.
 
-##
+## 4
 
-Liikkumalla pelaaja vaihtaa kalastuspaikkaa, joissa on eriävät % mahdollisuudet kalastaa tiettyä kalaa.
-Yksi kalastuspaikoista sisältää aarteen, joka on vaihtoehtoinen tapa voittaa peli.
+Loin oliot: kalat, paikat ja pelaaja ja niille omat metodit. Järjestin oliot omiin moduuleihinsa ja kutsuin ne pääohjelmassa.
+
+## 5
+
+Loin intro.txt tiedoston joka tulostetaan aina uuden pelin alkaessa. 
+Tein peliin myös tallennus -option.
+
+##
+Mahdollisia jatkosuunnitelmia pelin kehitykseen:
+- Kalastuspaikkoihin eriävät % mahdollisuudet kalastaa tiettyä kalaa.
+- Yksi kalastuspaikoista voisi sisältää aarteen, joka onv vaihtoehtoinen tapa voittaa peli.
 

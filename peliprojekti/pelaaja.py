@@ -7,7 +7,7 @@ class Pelaaja:
         self.nimi = nimi
         self.ikä = ikä
         self.sijainti = sijainti
-        self.inventaario = list()
+        self.inventaario = inventaario
 
     def move(self, sijainti):
         self.sijainti = sijainti
@@ -21,11 +21,10 @@ class Pelaaja:
                 print('Tarkastaja tarkistaa inventaariosi ja huomaa ettet ole maksanut kalastonhoitomaksua.\nTarkastaja takavarikoi inventaariosi.')
                 self.inventaario.clear()
         return
-
+    
     def fish(self):
         print('Heilautat vapaa ja viehe lentää kaaressa veteen. Onko sinulla kalaonnea?')
         kalaonni = random.randint(1, 5)
-
         if kalaonni in (1, 2, 3):
             kala = Kala()
             kalasaalis = kala.laji
@@ -39,7 +38,7 @@ class Pelaaja:
         else:
             print('Ei kalaonnea tällä kertaa. 😞')
         return
-
+    
     def inventory(self):
         print(f'Inventaariosi on {self.inventaario}')
         return

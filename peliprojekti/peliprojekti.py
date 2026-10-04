@@ -39,7 +39,7 @@ else:
 
 # Uuden pelaajaolion luonti
     pelaaja = Pelaaja(nimi, ikä, aloituspaikka)
-
+    
 # Pääohjelma
 print(f'\nTervetuloa, {pelaaja.nimi}!')
 while True:
