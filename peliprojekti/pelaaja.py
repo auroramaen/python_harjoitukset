@@ -1,17 +1,17 @@
 import random
+import json
 from kalat import Kala
-from paikat import Kalapaikka
 
 class Pelaaja:
-    def __init__(self, nimi, ikä, sijainti = 'Pieni järvi'):
+    def __init__(self, nimi, ikä, sijainti = 'Pieni järvi', inventaario = list()):
         self.nimi = nimi
         self.ikä = ikä
         self.sijainti = sijainti
-        self.inventaario = []
+        self.inventaario = list()
 
     def move(self, sijainti):
         self.sijainti = sijainti
-        print(f'Vaihdat kalastuspaikkaa.\n Uusi paikka on {self.sijainti}')
+        print(f'Vaihdat kalastuspaikkaa.\nUusi paikka on {self.sijainti}')
         tarkastus = random.randint(1,3)
         if tarkastus == 1:
             print('Törmäät kalastuslupatarkastajaan.')
@@ -43,3 +43,13 @@ class Pelaaja:
     def inventory(self):
         print(f'Inventaariosi on {self.inventaario}')
         return
+
+    def save(self):
+        tallennus_data = {
+            "nimi": self.nimi,
+            "ikä": self.ikä,
+            "inventaario": self.inventaario
+            }
+        with open(f'save_{self.nimi}.json', "w") as tiedosto:
+            json.dump(tallennus_data, tiedosto)
+
