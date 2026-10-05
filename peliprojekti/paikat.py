@@ -1,6 +1,5 @@
 import random
 from kalat import Kala, kalalajit
-
 #kalalajit = ['kuha', 'taimen', 'saapas', 'ahven', 'särki', 'hauki', 'Mamelukkikala']
 #indeksit kuha = 0, taimen = 1, saapas = 2, ahven = 3, särki = 4, hauki = 5, mamelukkikala = 6
 

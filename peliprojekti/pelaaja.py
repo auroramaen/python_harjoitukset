@@ -1,6 +1,6 @@
 import random
 import json
-from paikat import kp1
+from paikat import paikat, kp1
 
 class Pelaaja:
     def __init__(self, nimi, ikä, sijainti=kp1, inventaario = list()):
@@ -9,8 +9,8 @@ class Pelaaja:
         self.sijainti = sijainti
         self.inventaario = inventaario
 
-    def move(self, sijainti):
-        self.sijainti = sijainti
+    def move(self):
+        self.sijainti = random.choice(paikat)
         print(f'Vaihdat kalastuspaikkaa.\nUusi paikka on {self.sijainti}')
         tarkastus = random.randint(1,3)
         if tarkastus == 1:

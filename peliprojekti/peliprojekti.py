@@ -1,6 +1,4 @@
-import random
 import json
-from paikat import paikat
 from pelaaja import Pelaaja
 
 # Valikko ja komennot
@@ -20,25 +18,19 @@ if uusipeli == 2:
     pelaaja = Pelaaja(nimi=data_luettu['nimi'], ikä=data_luettu['ikä'], inventaario=data_luettu['inventaario'])
     print(data_luettu)
 else:
-
 # Aloituskysymykset
     nimi = input('Syötä nimesi: ')
     ikä = int(input('Syötä ikäsi: '))
-    aloituspaikka = paikat[0]
-
 # Jos pelaaja on alle 12 vuotias, peli päättyy
     if ikä < 12:
         print('Olet alaikäinen. Peli päättyy.')
         quit()
-
 # Jos pelaajan ikä on 12 tai yli, pelin intro tulostetaan      
     with open("intro.txt", "r", encoding="utf-8") as tiedosto:
         intro = tiedosto.read()
         print(intro)
-
 # Uuden pelaajaolion luonti
     pelaaja = Pelaaja(nimi, ikä)
-    
 # Pääohjelma
 print(f'\nTervetuloa, {pelaaja.nimi}!')
 print(f'Aloituspaikka on {pelaaja.sijainti}')
@@ -56,7 +48,7 @@ while True:
             print('👑 Voitit pelin! Sait tarvittavan määrän saalista.')
             break
     elif komento == '2':
-        pelaaja.move(random.choice(paikat))
+        pelaaja.move()
     elif komento == '3':
         pelaaja.inventory()
     elif komento == '4':
@@ -64,10 +56,3 @@ while True:
     elif komento == '5':
         print('Peli päättyi.')
         break
-        
-
-
-    
-
-
-
