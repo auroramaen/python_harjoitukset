@@ -42,6 +42,7 @@ while True:
         pelaaja.fish()
         if 'Mamelukkikala' in pelaaja.inventaario:
             print('👑 Voitit pelin! Sait saaliiksi legendaarisen Mamelukkikalan!')
+            break
         ahvenet = pelaaja.inventaario.count('ahven')
         taimenet = pelaaja.inventaario.count('taimen')
         if ahvenet >= 4 or taimenet >= 3:

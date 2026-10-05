@@ -28,7 +28,7 @@ class Pelaaja:
         if kalaonni in (1, 2):
             kala = self.sijainti.kanta()
             kalasaalis = kala.laji
-            print(f'Sinulla on kalaonnea, saaliisi on {kala.paino}g painava {kalasaalis} 🐟!')
+            print(f'Sinulla on kalaonnea, saaliisi on {kala.paino:.1f}kg painava {kalasaalis} 🐟!')
             paatos = input('Haluatko kerätä vai vapauttaa kalan? K = KERÄÄ/V = VAPAUTA: ').upper()
             if paatos == 'K':
                 print('Kala lisättiin inventaarioosi.')
