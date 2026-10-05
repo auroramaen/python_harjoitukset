@@ -1,9 +1,9 @@
 import random
 import json
-from kalat import Kala
+from paikat import kp1
 
 class Pelaaja:
-    def __init__(self, nimi, ikä, sijainti = 'Pieni järvi', inventaario = list()):
+    def __init__(self, nimi, ikä, sijainti=kp1, inventaario = list()):
         self.nimi = nimi
         self.ikä = ikä
         self.sijainti = sijainti
@@ -24,9 +24,9 @@ class Pelaaja:
     
     def fish(self):
         print('Heilautat vapaa ja viehe lentää kaaressa veteen. Onko sinulla kalaonnea?')
-        kalaonni = random.randint(1, 5)
-        if kalaonni in (1, 2, 3):
-            kala = Kala()
+        kalaonni = random.randint(1, 3)
+        if kalaonni in (1, 2):
+            kala = self.sijainti.kanta()
             kalasaalis = kala.laji
             print(f'Sinulla on kalaonnea, saaliisi on {kala.paino}g painava {kalasaalis} 🐟!')
             paatos = input('Haluatko kerätä vai vapauttaa kalan? K = KERÄÄ/V = VAPAUTA: ').upper()

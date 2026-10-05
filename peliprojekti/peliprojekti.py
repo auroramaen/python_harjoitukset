@@ -4,11 +4,11 @@ from paikat import paikat
 from pelaaja import Pelaaja
 
 # Valikko ja komennot
-k = 'KALASTA'
-l = 'LIIKU'
-i = 'INVENTAARIO'
-s = 'TALLENNA'
-e = 'LOPETA'
+k = '1 = KALASTA'
+l = '2 = LIIKU'
+i = '3 = INVENTAARIO'
+s = '4 = TALLENNA'
+e = '5 = LOPETA'
 
 # Uuden pelin aloitus
 uusipeli = int(input('1 = Uusi peli, 2 = Jatka peliä: '))
@@ -17,14 +17,14 @@ if uusipeli == 2:
 #    data_luettu = ''
     with open(f"save_{username}.json", "r", encoding="utf-8") as tiedosto:
         data_luettu = json.load(tiedosto)
-    pelaaja = Pelaaja(nimi=data_luettu['nimi'], ikä=data_luettu['ikä'], sijainti='Pieni järvi', inventaario=data_luettu['inventaario'])
+    pelaaja = Pelaaja(nimi=data_luettu['nimi'], ikä=data_luettu['ikä'], inventaario=data_luettu['inventaario'])
     print(data_luettu)
 else:
 
 # Aloituskysymykset
     nimi = input('Syötä nimesi: ')
     ikä = int(input('Syötä ikäsi: '))
-    aloituspaikka = random.choice(paikat)
+    aloituspaikka = paikat[0]
 
 # Jos pelaaja on alle 12 vuotias, peli päättyy
     if ikä < 12:
@@ -37,30 +37,31 @@ else:
         print(intro)
 
 # Uuden pelaajaolion luonti
-    pelaaja = Pelaaja(nimi, ikä, aloituspaikka)
+    pelaaja = Pelaaja(nimi, ikä)
     
 # Pääohjelma
 print(f'\nTervetuloa, {pelaaja.nimi}!')
+print(f'Aloituspaikka on {pelaaja.sijainti}')
 while True:
     print('VALIKKO')
-    print(k, l, i, e, s)
-    komento = input('Valitse komento: ').upper()
-    if komento == k:
+    print(k, l, i, s, e)
+    komento = input('Valitse komento: ')
+    if komento == '1':
         pelaaja.fish()
         if 'Mamelukkikala' in pelaaja.inventaario:
-            print('👑 Voitit pelin! Kalastit legendaarisen Mamelukkikalan')
+            print('👑 Voitit pelin! Sait saaliiksi legendaarisen Mamelukkikalan!')
         ahvenet = pelaaja.inventaario.count('ahven')
         taimenet = pelaaja.inventaario.count('taimen')
         if ahvenet >= 4 or taimenet >= 3:
-            print('Voitit pelin! Sait tarvittavan määrän saalista.')
+            print('👑 Voitit pelin! Sait tarvittavan määrän saalista.')
             break
-    elif komento == l:
+    elif komento == '2':
         pelaaja.move(random.choice(paikat))
-    elif komento == i:
+    elif komento == '3':
         pelaaja.inventory()
-    elif komento == s:
+    elif komento == '4':
         pelaaja.save()
-    elif komento == e:
+    elif komento == '5':
         print('Peli päättyi.')
         break
         
