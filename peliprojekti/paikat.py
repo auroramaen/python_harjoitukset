@@ -1,5 +1,7 @@
 import random
-from kalat import Kala
+from kalat import Kala, kalalajit
+
+#kalalajit = ['kuha', 'taimen', 'saapas', 'ahven', 'särki', 'hauki', 'Mamelukkikala']
 
 class Kalapaikka:
         def __init__(self, sijainti, kalalajit):
@@ -13,5 +15,6 @@ kp1 = Kalapaikka('Pieni järvi', Kala.create())
 kp2 = Kalapaikka('Iso järvi', Kala.create())
 kp3 = Kalapaikka('Joki', Kala.create())
 kp4 = Kalapaikka('Koski', Kala.create())
+kp5 = Kalapaikka('Meri', Kala.create())
 
-paikat = [kp1, kp2, kp3, kp4]
+paikat = [kp1, kp2, kp3, kp4, kp5]

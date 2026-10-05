@@ -47,8 +47,10 @@ class Pelaaja:
         tallennus_data = {
             "nimi": self.nimi,
             "ikä": self.ikä,
+            "sijainti": str(self.sijainti),
             "inventaario": self.inventaario
             }
-        with open(f'save_{self.nimi}.json', "w") as tiedosto:
+        with open(f'save_{self.nimi}.json', "w", encoding="utf-8") as tiedosto:
             json.dump(tallennus_data, tiedosto)
+        print('Peli tallennettu.')
 

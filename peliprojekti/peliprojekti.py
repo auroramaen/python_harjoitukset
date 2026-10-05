@@ -1,6 +1,5 @@
 import random
 import json
-from kalat import Kala
 from paikat import paikat
 from pelaaja import Pelaaja
 
@@ -15,10 +14,10 @@ e = 'LOPETA'
 uusipeli = int(input('1 = Uusi peli, 2 = Jatka peliä: '))
 if uusipeli == 2:
     username = input('Kirjoita nimesi: ')
-    data_luettu = ''
+#    data_luettu = ''
     with open(f"save_{username}.json", "r", encoding="utf-8") as tiedosto:
         data_luettu = json.load(tiedosto)
-    pelaaja = Pelaaja(nimi=data_luettu['nimi'], ikä=data_luettu['ikä'], sijainti="Pieni järvi", inventaario=data_luettu['inventaario'])
+    pelaaja = Pelaaja(nimi=data_luettu['nimi'], ikä=data_luettu['ikä'], sijainti='Pieni järvi', inventaario=data_luettu['inventaario'])
     print(data_luettu)
 else:
 
@@ -48,6 +47,8 @@ while True:
     komento = input('Valitse komento: ').upper()
     if komento == k:
         pelaaja.fish()
+        if 'Mamelukkikala' in pelaaja.inventaario:
+            print('👑 Voitit pelin! Kalastit legendaarisen Mamelukkikalan')
         ahvenet = pelaaja.inventaario.count('ahven')
         taimenet = pelaaja.inventaario.count('taimen')
         if ahvenet >= 4 or taimenet >= 3:
