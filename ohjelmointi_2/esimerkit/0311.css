@@ -1,0 +1,20 @@
+#logo {
+  width: 200px;
+  height: 150px;
+  background: coral;
+}
+
+/*varmistetaan että elementti ei valu sivujen yli asettamalla max-value 100%*/
+img {
+  max-width: 100%;
+}
+
+button {
+  font-size: 40px;
+  margin: 20px;
+}
+
+.delete-cat {
+  font-size: 40px;
+  margin: 20px;
+}

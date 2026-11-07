@@ -11,3 +11,12 @@ Tehdyt tehtävät:
 - Tehtävä 5: 3p
 
 Yhteensä 12p
+
+### JS-moduuli 3
+
+Tehdyt tehtävät:
+
+- Tehtävä 1: 2p
+- Tehtävä 2: 2p
+
+Yhteensä: 4p

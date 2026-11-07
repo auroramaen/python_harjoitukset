@@ -1,0 +1,49 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+}
+
+a {
+  color: aqua;
+}
+
+a:hover {
+  color: black;
+}
+
+.flex-container {
+  display: grid;
+  gap: 0;
+  justify-content: space-evenly;
+}
+
+.main-box {
+  width: 100%;
+  max-width: 500px;
+  background: lightpink;
+}
+
+.nav-primary {
+  width: 100%;
+  background: lightpink;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 200px;
+  padding: 2rem;
+  border: 2px solid black;
+  margin: 5rem;
+  background-color: darkmagenta;
+  text-align: center;
+}
