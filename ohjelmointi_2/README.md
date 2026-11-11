@@ -20,3 +20,10 @@ Tehdyt tehtävät:
 - Tehtävä 2: 2p
 
 Yhteensä: 4p
+
+### JS-moduuli 4
+
+Tehdyt tehtävät:
+
+- Tehtävä 1: 2p
+- Tehtävä 2: 2p
